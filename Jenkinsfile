@@ -19,6 +19,7 @@ pipeline {
             
                 steps {
                     script {
+                    bat 'python hello-world.py'
                     bat 'python test-case.py'
                 }
             }
