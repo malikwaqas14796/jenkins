@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Automated Testing Stage') {
             
-                steps{
+                steps {
                     script {
                     bat 'python test-case.py'
                 }
