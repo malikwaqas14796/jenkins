@@ -12,6 +12,7 @@ pipeline {
                 steps {
                     script {
                     bat 'python --version'
+                    bat 'python unit-test.py'
                 }
             }
         }
@@ -19,7 +20,7 @@ pipeline {
             
                 steps {
                     script {
-                    bat 'python hello-world.py'
+                    // bat 'python hello-world.py'
                     bat 'python test-case.py'
                 }
             }
