@@ -2,7 +2,7 @@ def check_python_syntax(code):
     try:
         compile(code, filename='<string>', mode='exec')
         print("Syntax check passed.")
-        raise AssertionError(f"Syntax check failed: {e}")
+        raise AssertionError(f"Syntax check failed")
     except SyntaxError as e:
         raise AssertionError(f"Syntax check failed: {e}")
 
