@@ -1,9 +1,9 @@
 def check_python_syntax(code):
     try:
         compile(code, filename='<string>', mode='exec')
-        print("Syntax check passed.<br><br><br>")
+        print("Syntax check passed.")
     except SyntaxError as e:
-        raise SyntaxError("Syntax check failed.<br><br><br>")
+        raise SyntaxError("Syntax check failed.")
 
 # Provide your Python code here
 python_code = '''
