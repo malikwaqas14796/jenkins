@@ -11,9 +11,18 @@ pipeline {
             
                 steps {
                     script {
-                    echo '<br><br><br>'
+                    echo '<br><br>'
+                    echo '---------------------------------Build Stage Starts here-----------------------------------------'
+                    echo '<br>'
+                    echo '---------------------------------Step 1-----------------------------------------'
+                    echo '<br>'
                     bat 'python --version'
+                    echo '<br>'
+                    echo '---------------------------------Step 2-----------------------------------------'
+                    echo '<br>'
                     bat 'python unit-test.py'
+                    echo '<br>'
+                    echo '---------------------------------Build Stage Ends here here-----------------------------------------'
                 }
             }
         }
@@ -21,15 +30,28 @@ pipeline {
             
                 steps {
                     script {
-                    // bat 'python hello-world.py'
+                    echo '<br><br>'
+                    echo '---------------------------------Testing Stage Starts here-----------------------------------------'
+                    echo '<br>'
+                    echo '---------------------------------Step 1-----------------------------------------'
+                    echo '<br>'
                     bat 'python test-case.py'
+                    echo '<br>'
+                    echo '---------------------------------Testing Stage Ends here here-----------------------------------------'
                     
                 }
             }
         }
         stage('Deployment Stage') {
             steps {
-                bat 'ping 172.16.178.94'
+                script{
+                    echo '<br><br>'
+                    echo '---------------------------------Deployment Stage Starts here-----------------------------------------'
+                    echo '<br>'
+                    bat 'ping 172.16.178.94'
+                    echo '<br>'
+                    echo '---------------------------------Deployment Stage Ends here here-----------------------------------------'
+                }
             }
         }
     }
