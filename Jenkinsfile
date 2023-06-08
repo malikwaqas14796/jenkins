@@ -22,6 +22,7 @@ pipeline {
                     script {
                     // bat 'python hello-world.py'
                     bat 'python test-case.py'
+                    
                 }
             }
         }
@@ -35,8 +36,9 @@ pipeline {
     post {
         success {
             script {
+                
                 emailext subject: 'Build Successful', 
-                          body: '<strong>Dear Concerned</strong><br><br>Job executed successfully. Details are given below.<br><br>'+'''${env.STACKTRACE}'''+'<br><br>Regards<br><br><strong>Jenkins Support</strong>',
+                          body: '<strong>Dear Concerned</strong><br><br>Job executed successfully. Details are given below.<br><br>'+errorMessage+'<br><br>Regards<br><br><strong>Jenkins Support</strong>',
                           to: 'waqas.rafique@nayatel.com',
                           from: 'malikwaqas14796@gmail.com'
             }
@@ -45,7 +47,7 @@ pipeline {
         failure {
             script {
                 emailext subject: 'Build Unsuccessful', 
-                          body: '<strong>Dear Concerned</strong><br><br>Job execution unsuccessful. Please go through below details and re-push changes after rectification.<br><br>'+'''${env.STACKTRACE}'''+'<br><br>Regards<br><br><strong>Jenkins Support</strong>',
+                          body: '<strong>Dear Concerned</strong><br><br>Job execution unsuccessful. Please go through below details and re-push changes after rectification.<br><br>'+errorMessage+'<br><br>Regards<br><br><strong>Jenkins Support</strong>',
                           to: 'waqas.rafique@nayatel.com',
                           from: 'malikwaqas14796@gmail.com'
             }
