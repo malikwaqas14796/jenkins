@@ -11,6 +11,7 @@ pipeline {
             
                 steps {
                     script {
+                    echo '<br><br><br>'
                     bat 'python --version'
                     bat 'python unit-test.py'
                 }
