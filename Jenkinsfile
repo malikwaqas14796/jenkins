@@ -36,7 +36,7 @@ pipeline {
     post {
         success {
             script {
-                
+                errorMessage = currentBuild.rawBuild.getLog(100).join('\n')
                 emailext subject: 'Build Successful', 
                           body: '<strong>Dear Concerned</strong><br><br>Job executed successfully. Details are given below.<br><br>'+errorMessage+'<br><br>Regards<br><br><strong>Jenkins Support</strong>',
                           to: 'waqas.rafique@nayatel.com',
@@ -46,6 +46,7 @@ pipeline {
 
         failure {
             script {
+                errorMessage = currentBuild.rawBuild.getLog(100).join('\n')
                 emailext subject: 'Build Unsuccessful', 
                           body: '<strong>Dear Concerned</strong><br><br>Job execution unsuccessful. Please go through below details and re-push changes after rectification.<br><br>'+errorMessage+'<br><br>Regards<br><br><strong>Jenkins Support</strong>',
                           to: 'waqas.rafique@nayatel.com',
