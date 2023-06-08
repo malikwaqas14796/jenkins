@@ -25,4 +25,4 @@ driver.switch_to.window(driver.window_handles[1])
 driver.get('https://crm.nayatel.com/views/crmViews/nayatelCrm/etickets/FormController?ttid=6185992')
 time.sleep(1)
 
-assert 'E Ticketss' in driver.title
+assert 'E Tickets' in driver.title
