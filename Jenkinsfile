@@ -59,20 +59,28 @@ pipeline {
     post {
         success {
             script {
-                
+                echo '<br><br>'
+                echo '---------------------------------Notification Success case starts here-----------------------------------------'
                 emailext subject: 'Build Successful', 
                           body: '<strong>Dear Concerned</strong><br><br>Job executed successfully. Details are given below.<br><br><pre>'+'''$BUILD_LOG'''+'</pre><br><br>Regards<br><br><strong>Jenkins Support</strong>',
                           to: 'waqas.rafique@nayatel.com',
                           from: 'malikwaqas14796@gmail.com'
+
+                echo '<br>'
+                echo '---------------------------------Notification Success case ends here-----------------------------------------'
             }
         }
 
         failure {
             script {
+                echo '<br><br>'
+                echo '---------------------------------Notification Success case starts here-----------------------------------------'
                 emailext subject: 'Build Unsuccessful', 
                           body: '<strong>Dear Concerned</strong><br><br>Job execution unsuccessful. Please go through below details and re-push changes after rectification.<br><br><pre>'+'''$BUILD_LOG'''+'</pre><br><br>Regards<br><br><strong>Jenkins Support</strong>',
                           to: 'waqas.rafique@nayatel.com',
                           from: 'malikwaqas14796@gmail.com'
+                echo '<br>'
+                echo '---------------------------------Notification Failure case ends here-----------------------------------------'
             }
         }
     }
