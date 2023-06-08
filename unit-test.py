@@ -8,7 +8,7 @@ def check_python_syntax(code):
 # Provide your Python code here
 python_code = '''
 def greet():
-print("Hello, world!")
+    print("Hello, world!")
 greet()
 '''
 
