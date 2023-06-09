@@ -45,7 +45,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps
-            {
+             {
                 withSonarQubeEnv() {
                 bat "C:/sonarqube/sonarqube-9.2.1/bin/windows-x86-64/StartSonar.bat"
             }
