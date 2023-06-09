@@ -46,7 +46,6 @@ pipeline {
         stage('SonarQube Analysis') {
             steps
             {
-                def scannerHome = tool 'SonarScanner';
                 withSonarQubeEnv() {
                 bat "C:/sonarqube/sonarqube-9.2.1/bin/windows-x86-64/StartSonar.bat"
             }
