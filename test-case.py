@@ -22,7 +22,7 @@ driver.find_element(By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[1]/form[1]/fie
 # Switch to the new window and open new URL
 driver.execute_script("window.open('');")
 driver.switch_to.window(driver.window_handles[1])
-driver.get('https://crm.nayatel.com/views/crmViews/nayatelCrm/EventLoggerForm/event')
+driver.get('https://crm.nayatel.com/views/crmViews/nayatelCrm/EventLoggerModule/event')
 time.sleep(1)
 
 assert 'Event Form' in driver.title
