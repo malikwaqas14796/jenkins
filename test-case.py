@@ -24,5 +24,5 @@ driver.execute_script("window.open('');")
 driver.switch_to.window(driver.window_handles[1])
 driver.get('https://crm.nayatel.com/views/crmViews/nayatelCrm/EventLoggerModule/event')
 time.sleep(1)
-
+print('Here')
 assert 'Event Form' in driver.title
