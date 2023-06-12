@@ -48,6 +48,7 @@ pipeline {
             {
                 echo "Running on ${env.NODE_NAME}"
                 script{
+                    bat "mvn --version"
                 withSonarQubeEnv(installationName: 'SonarQube') {
                 // bat "C:/sonarqube-10.0.0.68432/bin/windows-x86-64/StartSonar.bat"
                 bat "mvn clean test"
